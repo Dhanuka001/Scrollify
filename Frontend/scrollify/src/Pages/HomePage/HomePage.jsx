@@ -2,11 +2,11 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import { Route, Routes, useLocation} from "react-router-dom"
 import Middlepart from '../../Components/Middlepart';
-import Sidebar from '../../Components/Sidebar';
 import Reels from '../../Components/Reels/Reels';
 import CreateReelsForm from '../../Components/Reels/CreateReelsForm';
 import Profile from '../Profile/Profile';
 import HomeRight from '../../Components/HomeRight/HomeRight';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 function HomePage() {
   const location=useLocation();
