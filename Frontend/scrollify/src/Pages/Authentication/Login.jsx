@@ -2,6 +2,7 @@ import {TextField } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup"
 
 const initialValues ={email:"",password:""}
@@ -10,6 +11,7 @@ const validationSchema ={email:Yup.string().email("Invalid email").required("Ema
 function Login() {
     const [formValue,setFormValue] = useState();
     
+    const navigate = useNavigate();
     const handleSubmit = (values) => {
         console.log("handle submit",values)
     }
@@ -20,11 +22,11 @@ function Login() {
     //validationSchema={validationSchema} 
     initialValues={initialValues}
     >
-      <Form className="space-y-5">
+      <Form className="space-y-5 ">
 
         <div className="space-y-5">
             
-            <div>
+        <div>
                 <Field 
                 as={TextField} 
                 name="email" 
@@ -32,8 +34,13 @@ function Login() {
                 type="email" 
                 variant="outlined" 
                 fullWidth
+                
                 />
-                <ErrorMessage name="email" component={"div"} className="text-red-500"/>
+                <ErrorMessage 
+                name="email" 
+                component={"div"} 
+                className="text-red-500"
+                />
             </div>
 
             <div>
@@ -45,7 +52,11 @@ function Login() {
                 variant="outlined" 
                 fullWidth
                 />
-                <ErrorMessage name="password" component={"div"} className="text-red-500"/>
+                <ErrorMessage 
+                name="password" 
+                component={"div"} 
+                className="text-red-500"
+                />
             </div>
 
 
@@ -69,6 +80,10 @@ function Login() {
         </Button>
       </Form>
     </Formik>
+    <div className="flex gap-2 item-center justify-center pt-5">
+      <p className="pt-1">if you don't have account ?</p>
+      <Button onClick={()=>navigate("/register")}>Register</Button>
+    </div>
     </>
   )
 }

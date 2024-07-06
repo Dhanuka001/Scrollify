@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Remove italic style from input placeholders */
+input::placeholder {
+    font-style: normal;
+  }
+  
+  /* Remove italic style from text fields */
+  .MuiInputBase-input {
+    font-style: normal;
+  }
+  
+  /* Remove italic style from placeholder within text fields */
+  .MuiInputBase-input::placeholder {
+    font-style: normal;
+  }
+  
+  /* Style for the selected radio button */
+  .Mui-checked {
+    color: #2597fa !important; /* Change this to your preferred blue color */
+  }
+  
+  /* Remove italic style from buttons */
+  button {
+    font-style: normal;
+  }
+  
